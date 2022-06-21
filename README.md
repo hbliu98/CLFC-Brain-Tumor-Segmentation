@@ -1,4 +1,4 @@
-# Contrastive Multimodal Brain Tumor Segmentation
+# CLFC Brain Tumor Segmentation
 > This is the code for MICCAI 2022 paper: "Multimodal Brain Tumor Segmentation Using Contrastive Learning based Feature Comparison with Monomodal Normal Brain Images". The training pipeline is motivated by [nnUNet](https://github.com/MIC-DKFZ/nnUNet)
 
 If you find it useful in your own research, please cite our paper:
