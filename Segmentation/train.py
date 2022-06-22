@@ -62,7 +62,10 @@ def main(args):
         scheduler.step()
         # running validation at every epoch is time consuming
         if epoch%config.VALIDATION_INTERVAL == 0:
-            perf = inference(model['segnet'], validset, logger, config)
+            if config.TRAIN.PARALLEL:
+                perf = inference(model.module['segnet'], validset, logger, config)
+            else:
+                perf = inference(model['segnet'], validset, logger, config)
 
         if perf > best_perf:
             best_perf = perf
