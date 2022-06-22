@@ -13,14 +13,9 @@ def D(p, z):
 
 def train(model, train_generator, optimizer, criterion, logger, config, epoch):
     model.train()
-    if config.TRAIN.PARALLEL:
-        segnet = model.module['segnet']
-        projections = model.module['projections']
-        predictions = model.module['predictions']
-    else:
-        segnet = model['segnet']
-        projections = model['projections']
-        predictions = model['predictions']
+    segnet = model['segnet']
+    projections = model['projections']
+    predictions = model['predictions']
     losses = AverageMeter()
     # if scaler is not supported, it switches to default mode, the training can also continue
     scaler = torch.cuda.amp.GradScaler()
@@ -62,7 +57,7 @@ def train(model, train_generator, optimizer, criterion, logger, config, epoch):
         if idx % config.PRINT_FREQ == 0:
             msg = 'Epoch: [{0}][{1}/{2}]\t' \
                 'Loss {loss.val:.3f} ({loss.avg:.3f})'.format(
-                    epoch, idx, num_iter,
+                    epoch, i, num_iter,
                     loss = losses,
                 )
             logger.info(msg)
