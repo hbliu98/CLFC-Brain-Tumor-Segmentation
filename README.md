@@ -3,7 +3,14 @@
 
 If you find it useful in your own research, please cite our paper:
 ```
-This is a placeholder
+@inproceedings{liu2022multimodal,
+  title={Multimodal Brain Tumor Segmentation Using Contrastive Learning Based Feature Comparison with Monomodal Normal Brain Images},
+  author={Liu, Huabing and Nie, Dong and Shen, Dinggang and Wang, Jinda and Tang, Zhenyu},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={118--127},
+  year={2022},
+  organization={Springer}
+}
 ```
 
 ## Network
